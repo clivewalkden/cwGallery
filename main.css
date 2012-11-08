@@ -116,6 +116,14 @@ td { vertical-align: top; }
 form label  { float: left; width: 180px; line-height: 1.8em; }
 form input  { padding: 0.2em; margin-bottom: 0.5em; border: 1px solid #06e; }
 
+#example1    { width: 500px; padding: 10px; border: 1px solid #ddd; margin-bottom: 15px; }
+#example1 div.main img  { margin-bottom: 15px; }
+#example1 ul { list-style: none; margin: 0; padding: 0; }
+#example1 ul li { margin: 0 25px 0 0; float: left; }
+#example1 ul li.last       { margin: 0; }
+#example1 ul li a { opacity: 0.5; }
+#example1 ul li a.active { opacity: 1; }
+
 .br         { clear: both; }
 
 .button     { padding: 0.5em 0.75em; border: medium none; background: #06e; color: #fff; text-transform: uppercase; }

@@ -20,6 +20,16 @@
         <h1>CWGallery v0.1</h1>
         <p>This script shows a visual counter next to the input field showing the number of characters remaining for the given field.</p>
         <p>Basic usage</p>
+        <div id="example1" class="clearfix">
+            <div class="main">
+                <img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg">
+            </div>
+            <ul class="thumbs">
+                <li><a href="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg" class="active"><img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf_q.jpg"></a></li>
+                <li><a href="http://farm9.staticflickr.com/8291/7720250628_3f3fd53338.jpg"><img src="http://farm9.staticflickr.com/8291/7720250628_3f3fd53338_q.jpg"></a></li>
+                <li class="last"><a href="http://farm8.staticflickr.com/7130/7882880940_56c68d4198.jpg"><img src="http://farm8.staticflickr.com/7130/7882880940_56c68d4198_q.jpg"></a></li>
+            </ul>
+        </div>
 
         <h3>Configuration Options</h3>
         <p>The script has 3 options:</p>
@@ -52,7 +62,13 @@
 <script src="jquery.cw_gallery-0.1.js"></script>
 
 <script>
-
+$(function(){
+    $('#example1').cwGallery({
+        thumb_container : 'thumbs',
+        img_container   : 'main',
+        animate_height  : true
+    });
+});
 </script>
 
 <script>
