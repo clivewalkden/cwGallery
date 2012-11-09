@@ -18,7 +18,8 @@
 		var defaults = {
             thumb_container : 'cw_thumbs',
 			img_container   : 'cw_image',
-			animate_height  : true
+            active_class    : 'cw_active',
+			animate_height  : false
 		};
 
 		// Merge default and user settings
@@ -28,8 +29,8 @@
             click : function(e) {
                 e.preventDefault();
 
-                $('.'+settings.thumb_container+' a').removeClass('active');
-                $(this).addClass('active');
+                $('.'+settings.thumb_container+' a').removeClass(settings.active_class);
+                $(this).addClass(settings.active_class);
 
                 var main_img = $('.'+settings.img_container).children('img');
                 var origWidth = main_img.width();
@@ -37,24 +38,7 @@
 
                 var self = this;
 
-                //var popuplink = $(this).data('popup');
                 var largeimg = $(this).attr('href');
-
-//                if (popuplink.length > 0) {
-//                    settings.img_container.attr('href',popuplink);
-//                }else{
-//                    settings.img_container.removeAttr('href');
-//                }
-//
-//                  Duplicate?
-//                $('.'+settings.img_container).children('img').animate({
-//                    opacity: 0.01
-//                },function(){
-//                    $('.'+settings.img_container).children('img').attr('src',largeimg);
-//                    $('.'+settings.img_container).children('img').animate({
-//                        opacity: 1
-//                    });
-//                });
 
                 $('.'+settings.img_container).children('img').fadeTo(300,0.01,function(){
                     // Create temp image for the SOLE purpose of grabbing the image size
@@ -65,7 +49,7 @@
                             var imgWidth = this.width;
 
                             // Check if the origHeight is different
-                            if(imgHeight != origHeight){
+                            if(imgHeight != origHeight && settings.animate_height == true){
                                 // Resize
                                 $('.'+settings.img_container).children('img').animate({
                                     'height':imgHeight,

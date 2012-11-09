@@ -122,7 +122,7 @@ form input  { padding: 0.2em; margin-bottom: 0.5em; border: 1px solid #06e; }
 #example1 ul li { margin: 0 25px 0 0; float: left; }
 #example1 ul li.last       { margin: 0; }
 #example1 ul li a { opacity: 0.5; }
-#example1 ul li a.active { opacity: 1; }
+#example1 ul li a:hover { opacity: 1; }
 
 .br         { clear: both; }
 
