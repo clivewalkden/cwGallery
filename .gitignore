@@ -1,0 +1,7 @@
+/node_modules/
+/nbproject/
+/libs/
+sftp-config.json
+Gruntfile.js
+.jshintrc
+package.json
