@@ -1,0 +1,8 @@
+
+#example1 					{ width: 500px; padding: 10px; border: 1px solid #ddd; margin-bottom: 15px; }
+#example1 div.cw_image img 	{ margin-bottom: 15px; }
+#example1 ul 				{ list-style: none; margin: 0; padding: 0; }
+#example1 ul li 			{ margin: 0 25px 0 0; float: left; }
+#example1 ul li.last 		{ margin: 0; }
+#example1 ul li a 			{ opacity: 0.5; }
+#example1 ul li a:hover 	{ opacity: 1; }

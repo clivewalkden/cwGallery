@@ -1,29 +1,24 @@
-/*!
- * cwGallery - for jQuery 1.7+
- * http://www.cwenterprises.co.uk
+/*
+ * cw_gallery
+ * http://clivewalkden.co.uk/code/cw_gallery/
  *
- * Copyright 2012, Clive Walkden (http://www.cwenterprises.co.uk)
- *
- * @package cwGallery
- * @author Clive Walkden (http://www.cwenterprises.co.uk)
- * @version 0.1
- * @copyright Copyright (c) 2012 SOZO Design Ltd (http://www.cwenterprises.co.uk)
- * @date: 29-10-2012
+ * Copyright (c) 2014 Clive Walkden
+ * Licensed under the MIT license.
  */
 
 (function($){
-	$.fn.cwGallery = function(custom) {
+  $.fn.cwGallery = function(custom) {
 
-		// Default plugin settings
-		var defaults = {
-            thumb_container : 'cw_thumbs',
-			img_container   : 'cw_image',
-            active_class    : 'cw_active',
-			animate_height  : false
-		};
+    // Default plugin settings
+    var defaults = {
+        thumb_container : 'cw_thumbs',
+        img_container   : 'cw_image',
+        active_class    : 'cw_active',
+        animate_height  : false
+    };
 
-		// Merge default and user settings
-		var settings = $.extend({}, defaults, custom);
+    // Merge default and user settings
+    var settings = $.extend({}, defaults, custom);
 
         $('.'+settings.thumb_container+' a').on({
             click : function(e) {
@@ -38,7 +33,7 @@
 
                 var self = this;
 
-                var largeimg = $(this).attr('href');
+                var largeimg = $(self).attr('href');
 
                 $('.'+settings.img_container).children('img').fadeTo(300,0.01,function(){
                     // Create temp image for the SOLE purpose of grabbing the image size
@@ -46,10 +41,10 @@
                         .attr('src',largeimg)
                         .load(function(){
                             var imgHeight = this.height;
-                            var imgWidth = this.width;
+                            //var imgWidth = this.width;
 
                             // Check if the origHeight is different
-                            if(imgHeight != origHeight && settings.animate_height == true){
+                            if(imgHeight !== origHeight && settings.animate_height === true){
                                 // Resize
                                 $('.'+settings.img_container).children('img').animate({
                                     'height':imgHeight,
@@ -70,6 +65,6 @@
                 });
             }
         });
-	}
+  };
 
 })(jQuery);

@@ -1,0 +1,27 @@
+{
+  "name": "cw_gallery",
+  "title": "CW Gallery",
+  "description": "A Simple gallery script without the extra bloat.",
+  "version": "0.3.0",
+  "homepage": "http://clivewalkden.co.uk/code/cw_gallery/",
+  "author": {
+    "name": "Clive Walkden",
+    "email": "clivewalkden@gmail.com",
+    "url": "http://clivewalkden.co.uk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/clivewalkden/cwGallery.git"
+  },
+  "bugs": "https://github.com/clivewalkden/cwGallery/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://clivewalkden.co.uk/code/cw_gallery//blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}

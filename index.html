@@ -1,60 +1,164 @@
 <!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
-<title>CWGallery</title>
-<meta name="description" content="">
+<title>CWGallery v0.3.0 | jQuery Plugin | Clive Walkden</title>
+<meta name="description" content="CWGallery is a a simple gallery script without the extra bloat.">
 
 <meta name="viewport" content="width=device-width">
-<link href="main.css" rel="stylesheet">
-<link href="jquery.cw_gallery-0.1.css" rel="stylesheet">
+
+<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+<link href="http://clivewalkden.co.uk/code/template/css/bootstrap.css" rel="stylesheet">
+<link href="http://clivewalkden.co.uk/code/template/css/main.css" rel="stylesheet">
+<link href="css/main.css?v=1" rel="stylesheet">
+<link href="css/cw_gallery.css" rel="stylesheet">
+<link href="http://clivewalkden.co.uk/code/template/css/prettify.css" rel="stylesheet">
 </head>
 <body>
 <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-<div id="container">
     <header>
-
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    <h1>CW Gallery v0.3.0</h1>
+                </div>
+                <div class="span6">
+                    <h2>A Simple gallery script without the extra bloat.</h2>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <div role="main" id="content">
-        <h1>CWGallery v0.1</h1>
-        <p>This script is a basic gallery script that you supply the thumbnail and main images for and it displays the larger image when the thumbnail is clicked.</p>
-        <p>Basic usage</p>
-        <div id="example1" class="clearfix">
-            <div class="main">
-                <img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="span12 center">
+                <a href="https://github.com/clivewalkden/cwGallery" class="btn btn-large btn-inverse" target="_blank">View Project on Github »</a>
+                <a href="https://github.com/clivewalkden/cwGallery/archive/master.zip" class="btn btn-large">Download CW Gallery</a>
             </div>
-            <ul class="thumbs">
-                <li><a href="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg" class="cw_active"><img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf_q.jpg"></a></li>
-                <li><a href="http://farm9.staticflickr.com/8440/7882885212_b2822e751e.jpg"><img src="http://farm9.staticflickr.com/8440/7882885212_b2822e751e_q.jpg"></a></li>
-                <li class="last"><a href="http://farm8.staticflickr.com/7130/7882880940_56c68d4198.jpg"><img src="http://farm8.staticflickr.com/7130/7882880940_56c68d4198_q.jpg"></a></li>
-            </ul>
+        </div>
+    </div>
+
+    <div role="main" class="container">
+        <div class="row">
+            <div class="span12">
+                <img src="https://travis-ci.org/clivewalkden/cwGallery.png?branch=master">
+                <img src="https://d2weczhvl823v0.cloudfront.net/clivewalkden/cwgallery.png">
+                <p>This script is a basic gallery script that you supply the thumbnail and main images for and it displays the larger image when the thumbnail is clicked.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div class="page-header">
+                    <h1>Basic Usage</h1>
+                </div>
+            </div>
         </div>
 
-        <h3>Configuration Options</h3>
-        <p>The script has 3 options:</p>
-        <ul>
-            <li>thumb_container</li>
-            <li>img_container</li>
-            <li>active_class</li>
-            <li>animate_height</li>
-        </ul>
-        <h4>thumb_container</h4>
-        <p>The class of the thumb container.</p>
-        <p>Any &lt;a&gt; tags within this container are gleamed for their href which is the larger image</p>
-        <p>default: 'cw_thumbs'</p>
-        <h4>img_container</h4>
-        <p>The container around the main image</p>
-        <p>The &lt;img&gt; tag within this is the </p>
-        <p>default: 'cw_image'</p>
-        <h4>active_class</h4>
-        <p>The class applied when the thumbnail is selected.</p>
-        <p>This class is added to the thumbnail when it is clicked to show which image is active.</p>
-        <p>default: 'cw_count_warning'</p>
-        <h4>animate_height</h4>
-        <p>If you want the height of the image to animate between tweens.</p>
-        <p>If this is set to true then the height will animate when a different sized image is selected. If all your images are the same height then set this to false.</p>
-        <p>default: false</p>
+        <div class="row">
+            <div class="span12">
+                <p>The code below...</p>
+                <pre class="prettyprint linenums lang-html">
+&lt;div id="example1" class="clearfix"&gt;
+    &lt;div class="cw_image"&gt;
+        &lt;img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg"&gt;
+    &lt;/div&gt;
+    &lt;ul class="cw_thumbs"&gt;
+        &lt;li&gt;&lt;a href="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg" class="cw_active"&gt;&lt;img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf_q.jpg"&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="http://farm9.staticflickr.com/8440/7882885212_b2822e751e.jpg">&lt;img src="http://farm9.staticflickr.com/8440/7882885212_b2822e751e_q.jpg"&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="last"&gt;&lt;a href="http://farm8.staticflickr.com/7130/7882880940_56c68d4198.jpg"&gt;&lt;img src="http://farm8.staticflickr.com/7130/7882880940_56c68d4198_q.jpg"&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+// Finally call the script
+$(function(){
+    $('#example1').cwGallery();
+});
+&lt;/script&gt;
+                </pre>
+            </div>
+            <div class="span12">
+                <p>... produces this</p>
+                <div id="example1" class="clearfix">
+                    <div class="cw_image">
+                        <img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg">
+                    </div>
+                    <ul class="cw_thumbs">
+                        <li><a href="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf.jpg" class="cw_active"><img src="http://farm9.staticflickr.com/8424/7720259766_ef2fc0c2bf_q.jpg"></a></li>
+                        <li><a href="http://farm9.staticflickr.com/8440/7882885212_b2822e751e.jpg"><img src="http://farm9.staticflickr.com/8440/7882885212_b2822e751e_q.jpg"></a></li>
+                        <li class="last"><a href="http://farm8.staticflickr.com/7130/7882880940_56c68d4198.jpg"><img src="http://farm8.staticflickr.com/7130/7882880940_56c68d4198_q.jpg"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12">
+                <div class="page-header">
+                    <h1>Configuration Options</h1>
+                </div>
+            </div>
+            <div class="span12">
+                <table class="table table-bordered">
+                <tr>
+                    <th>Property</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>thumb_container</td>
+                    <td>string</td>
+                    <td><code>cw_thumbs</code></td>
+                    <td>The class of the thumb container. Any &lt;a&gt; tags within this container are gleamed for their href which is the larger image</td>
+                </tr>
+                <tr>
+                    <td>img_container</td>
+                    <td>string</td>
+                    <td><code>cw_image</code></td>
+                    <td>The container around the main image. The &lt;img&gt; tag within this is the main gallery target image.</td>
+                </tr>
+                <tr>
+                    <td>active_class</td>
+                    <td>string</td>
+                    <td><code>cw_active</code></td>
+                    <td>The class applied when the thumbnail is selected. This class is added to the thumbnail when it is clicked to show which image is active.</td>
+                </tr>
+                <tr>
+                    <td>animate_height</td>
+                    <td>boolean</td>
+                    <td><code>true</code></td>
+                    <td>If you want the height of the image to animate between tweens. If this is set to true then the height will animate when a different sized image is selected. If all your images are the same height then set this to false.</td>
+                </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12">
+                <div class="page-header">
+                    <h1>Changelog</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12">
+                <table class="table table-bordered table-striped">
+                <tr>
+                    <td><strong>v0.3.0</strong></td>
+                    <td>31st January 2014</td>
+                    <td>Linted code. Setup project correctly.</td>
+                </tr>
+                <tr>
+                    <td><strong>v0.1.0</strong></td>
+                    <td>9th November 2012</td>
+                    <td>Created the first version of the script based on previous created scripts.</td>
+                </tr>
+                </table>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -62,18 +166,21 @@
     </footer>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/jquery-1.7.1.min.js"><\/script>')</script>
-
-<script src="jquery.cw_gallery-0.1.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="libs/jquery/jquery.js"><\/script>')</script>
+<script src="src/cw_gallery.js?v=0.3.01"></script>
+<script src="http://clivewalkden.co.uk/code/template/js/bootstrap.js"></script>
+<script src="http://clivewalkden.co.uk/code/template/js/prettify.js"></script>
 
 <script>
 $(function(){
-    $('#example1').cwGallery({
-        thumb_container : 'thumbs',
-        img_container   : 'main',
-        animate_height  : true
-    });
+    window.prettyPrint && prettyPrint();
+})
+</script>
+
+<script>
+$(function(){
+    $('#example1').cwGallery();
 });
 </script>
 
